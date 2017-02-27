@@ -1,5 +1,5 @@
 # WheresElaiza
-Instagram C-list celebrity @Wildling_by_choice tends to wander off into the forest, and what would take a 6 hour man hunt should now only take a minute. 
+Instagram C-list celebrity [@Wildling_by_choice](https://www.instagram.com/wildling_by_choice/) tends to wander off into the forest, and what would take a 6 hour man hunt now only takes a minute.
 
 IoT Dog Tracker for the wild Elaiza
 
