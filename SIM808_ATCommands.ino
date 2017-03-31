@@ -5,27 +5,28 @@
 
 #include <SoftwareSerial.h>
 
-SoftwareSerial ss(2,3);
+#define SIM808_RX 2
+#define SIM808_TX 3
+
+SoftwareSerial sim(SIM808_RX,SIM808_TX);
 
 char inChar = 0;
 
 void setup(){
 	Serial.begin(115200);
   	Serial.println("Device ready");
-  	// set the data rate for the SoftwareSerial port
-  	mySerial.begin(4800);
+  	sim.begin(4800); // set the data rate for the SoftwareSerial port
 }
 
-void loop() // run over and over
-{
-  	if (mySerial.available()){
-    	inChar = mySerial.read();
+void loop() {
+
+  	if (sim.available()){
+    	inChar = sim.read();
     	Serial.write(inChar);
     	delay(20);
     }
     
   	if (Serial.available()>0){
-    mySerial.write(Serial.read());
- 
+    sim.write(Serial.read());
   	}
 }
