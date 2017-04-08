@@ -18,7 +18,7 @@ SoftwareSerial fonaSS = SoftwareSerial(SIM808_RX, SIM808_TX);
 SoftwareSerial *fonaSerial = &fonaSS;
 //	HardwareSerial *fonaSerial = &Serial1; 
 Adafruit_FONA fona = Adafruit_FONA(FONA_RST);
-float latitude, longitude, speed_kph, heading, speed_mph, altitude;
+float lat, lon, speed_kph, heading, altitude;
 unsigned long currentMillis;
 unsigned long previousMillis = 0;
 unsigned long timer;
@@ -65,8 +65,8 @@ void sendSMS(){
 	delay(1000);
 	fonaSS.print("AT+CMGS=\"2108186119\"\r");
 	delay(1000);
-	fonaSS.println(latitude, 6);
-	fonaSS.println(longitude, 6);
+	fonaSS.println(lat, 6);
+	fonaSS.println(lon, 6);
 	fonaSS.print("\r");
 	delay(1000);
 	fonaSS.println((char)26);
@@ -85,12 +85,12 @@ void WheresElaiza(){
 	fona.enableGPS(true);
 	while(!gps_success){
 		delay(2000);
-		gps_success = fona.getGPS(&latitude, &longitude, &speed_kph, &speed_mph, &heading, &altitude);
+		gps_success = fona.getGPS(&lat, &lon, &speed_kph, &heading, &altitude);
 		if (gps_success){
 			Serial.print("GPS lat:");
-			Serial.println(latitude, 6);
+			Serial.println(lat, 6);
 			Serial.print("GPS Long:");
-			Serial.println(longitude, 6);
+			Serial.println(lon, 6);
 
 		}
 	}
