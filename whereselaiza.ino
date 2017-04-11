@@ -65,13 +65,19 @@ void sendSMS(){
 	delay(1000);
 	fonaSS.print("AT+CMGS=\"2108186119\"\r");
 	delay(1000);
-	fonaSS.println(lat, 6);
-	fonaSS.println(lon, 6);
+	fonaSS.print("https://google.com/maps/place/"):
+	fonaSS.print(lat, 6);
+	fonaSS.print(",");
+	fonaSS.print(lon, 6);
+	//fonaSS.println(lat, 6);
+	//fonaSS.println(lon, 6);
 	fonaSS.print("\r");
 	delay(1000);
 	fonaSS.println((char)26);
 	fonaSS.println();
 	delay(10000);
+	fonaSS.println();
+	fonaSS.println("Message sent");
 	digitalWrite(power, LOW);
 }
 
