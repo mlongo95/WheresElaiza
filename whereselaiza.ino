@@ -63,7 +63,7 @@ void loop(){
 void sendSMS(){
 	fonaSS.print("AT+CMGF=1\r");
 	delay(1000);
-	fonaSS.print("AT+CMGS=\"2108186119\"\r");
+	fonaSS.print("AT+CMGS=\"##########\"\r");
 	delay(1000);
 	fonaSS.print("https://google.com/maps/place/"):
 	fonaSS.print(lat, 6);
